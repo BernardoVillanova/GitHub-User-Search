@@ -1,0 +1,173 @@
+body {
+    background-color: #EEF5FF;
+}
+
+header {
+    min-width: 96%;
+    background-color: white;
+    padding: 5px 10px;
+    box-shadow: 4px 3px 2px 1px rgba(0, 0, 0, 0.08);
+}
+
+nav {
+    border-bottom: 1px solid #E1E4E8;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1rem 0;
+    width: 100%;
+}
+
+strong {
+    font-size: 1.5em;
+    cursor: pointer;
+    position: relative; 
+}
+
+strong::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 5px;
+    background-color: #FF9800; 
+    position: absolute;
+    bottom: 0px; 
+    transition: width 0.8s ease; 
+}
+
+strong:hover::after {
+    width: 100%;
+}
+
+strong.selected::after {
+    transition: none;
+    width: 100%;
+}
+
+.numRepo {
+    background-color: #B6BBC4;
+    border-radius: 20px;
+}
+
+#back {
+    background-color: #B80000;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    width: 150px;
+}
+
+#back:hover {
+    background-color: #9A031E;
+}
+
+input {
+    background-color: white;
+    border: none;
+    padding: 1rem 4rem 1rem 1rem;
+    font-size: 1rem;
+    height: 3em;
+    width: 20em;
+    border-radius: 1rem;
+    color: #4F4A45;
+    box-shadow: 4px 3px 2px 1px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 2em;
+}
+  
+input:focus {
+    outline-color: #4F4A45;
+}
+  
+.search {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.search button {
+    background-color: transparent;
+    border: none;
+    margin-left: -45px;
+    margin-bottom: 32px;
+    padding: 0 10px;
+    font-size: 1.5rem;
+    color: #4F4A45;
+    cursor: pointer;
+}
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+  
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 4px 3px 2px 1px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    min-width: 80%;
+}
+
+.profile-image {
+    background-color: #ddd;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.profile-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.userName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.bioUser {
+    text-align: center;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1em;;
+}
+
+#repo {
+    padding: 1em;
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 4px 3px 2px 1px rgba(0, 0, 0, 0.08);
+}
+
+@media screen and (max-width: 500px) {
+    strong {
+        font-size: 1.3em;
+    }
+    
+    #back {
+        width: 130px;
+    }
+    
+}
