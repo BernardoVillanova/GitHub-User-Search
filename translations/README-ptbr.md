@@ -55,14 +55,14 @@ $ ```docker run -d -p 8080:80 --name nameapp nameapp```
 - O arquivo html (index.html) é onde inseri os links da CDN e do ToolKit e o Header padrão;
 - Foi criada uma div, identificada como 'content', onde será inserido o conteúdo do VueJs;
 - O arquivo main.js está estruturado da seguinte forma:
-  - ```el`` -> É aqui que o DOM tem lugar, para modelar o HTML ;
-  - ```template`` -> Onde é inserido o código HTML, optei por codificar desta forma para facilitar o uso do VueJS em comandos posteriores;
+  - ```el``` -> É aqui que o DOM tem lugar, para modelar o HTML ;
+  - ```template``` -> Onde é inserido o código HTML, optei por codificar desta forma para facilitar o uso do VueJS em comandos posteriores;
   - ```data()``` -> Declaração de dados;
     - A variável ```selectedRepoType: 'repos'```, tem essa declaração para que quando o Usuário for pesquisado, a parte Repos seja marcada no css;
-    - ```showInput: true``, esta tem a função de esconder e mostrar a entrada de busca e visualizar os repos, construí desta forma para ser página única;
+    - ```showInput: true```, esta tem a função de esconder e mostrar a entrada de busca e visualizar os repos, construí desta forma para ser página única;
     - ```originalRepos[]``` é utilizado para fazer uma cópia dos repositórios para que a filtragem possa ser feita e a lista de repositórios esteja disponível
-      - ```...this.repo`` garante que é uma cópia independente e não uma referência
-- A função do ```axios``, um framework js, no código que você forneceu é fazer requisições HTTP para a API do GitHub.
+      - ```...this.repo``` garante que é uma cópia independente e não uma referência
+- A função do ```axios```, um framework js, no código que você forneceu é fazer requisições HTTP para a API do GitHub.
 - ```methods```:
   - Há um total de 5 funções, a primeira delas é: 
     - ```enviar()```: A função enviar(), cujo papel é enviar o nome procurado no input principal {{ user }}
