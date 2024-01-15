@@ -9,9 +9,12 @@ new Vue({
             </div>
         </template>
         <template v-else>
-            <button v-on:click="mostrarInput">Voltar</button>
+        <nav>
+            <strong v-on:click="exibirRepo">Repos <i class="numRepo">{{ numRepo }}</i></strong>
+            <strong v-on:click="exibirStar">Starred <i class="numRepo">{{ numStar }}</i></strong> 
+            <button id="back" v-on:click="mostrarInput">Return</button>
+        </nav>
         </template>
-        <hr/>
         <div v-if="!showInput">
             <h2>{{ userName }}</h2>
             <img v-bind:src="avatar" alt="User Avatar"/>
@@ -34,6 +37,8 @@ new Vue({
             userName: '',
             avatar: '',
             bio: '',
+            numRepo: '',
+            numStar: '',
             repos: []
         }
     },
@@ -70,6 +75,27 @@ new Vue({
         },
         mostrarInput() {
             location.reload();
+        },
+        exibirRepo() {
+            axios
+                .get(`https://api.github.com/users/${this.user}/repos`)
+                .then((response) => {
+                    this.repos = response.data;
+                    this.showInput = false;
+                })
+                .catch((error) => {
+                    console.error('Erro ao buscar repositórios:', error);
+                });
+        },
+        exibirStar() {
+            axios
+                .get(`https://api.github.com/users/${this.user}/starred`)
+                .then((response) => {
+                    this.repos = response.data;
+                    this.showInput = false;
+                })
+                .catch((error) => {
+                    console.error('Erro ao buscar repositórios favoritos:', error);
+                });
         }
-    }
-})
+}})
